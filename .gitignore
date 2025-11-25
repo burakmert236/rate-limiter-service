@@ -1,0 +1,96 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.txt
+coverage.html
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency directories
+vendor/
+
+# Go build cache
+.cache/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Docker volumes and data
+docker-compose.override.yml
+*.log
+logs/
+
+# Redis data
+*.rdb
+*.aof
+dump.rdb
+appendonly.aof
+redis-data/
+
+# Generated protobuf files (optional - uncomment if you commit generated files)
+# *.pb.go
+# *_grpc.pb.go
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Build outputs
+/build/
+/out/
+
+# Configuration files with secrets
+config.local.yml
+config.local.yaml
+secrets.yml
+secrets.yaml
+
+# Debug files
+__debug_bin
+debug
+*.pprof
+
+# Air (live reload tool) temp files
+tmp/
+
+# Private keys and certificates
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3

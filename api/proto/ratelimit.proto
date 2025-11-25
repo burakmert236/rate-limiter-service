@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package ratelimit.v1;
+
+option go_package = "github.com/burakmert236/rate-limiter-service/api/proto/ratelimit/v1;ratelimitv1";
+
+import "google/protobuf/timestamp.proto";
+
+message CheckRateLimitRequest {
+    // Unique identifier for what we're rate limiting
+    // Examples: "user:123", "ip:192.168.1.1", "apikey:abc123"
+    string key = 1;
+
+    // Maximum number of requests allowed
+    int32 limit = 2;
+
+    // Time window in seconds (e.g., 60 for "10 requests per minute")
+    int32 window_seconds = 3;
+
+    // Optional: namespace for organizing limits
+    string namespace = 4;
+}
+
+message CheckRateLimitResponse {
+    // Whether the request is allowed
+    bool allowed = 1;
+
+    // How many requests remaining in current window
+    int32 remaining = 2;
+
+    // When the rate limit resets
+    google.protobuf.Timestamp reset_at = 3;
+
+    // If denied, how long to wait before retry (seconds)
+    int32 retry_after_seconds = 4;
+    
+    // Current limit being applied
+    int32 limit = 5;
+}
+
+service RateLimiterService {
+    rpc CheckRateLimit(CheckRateLimitRequest) returns (CheckRateLimitResponse);
+}

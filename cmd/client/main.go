@@ -18,7 +18,7 @@ func main() {
 	key := flag.String("key", "user:123", "Rate limit key")
 	limit := flag.Int("limit", 10, "Request limit")
 	window := flag.Int("window", 60, "Window in seconds")
-	serverAddr := flag.String("server", "localhost:50051", "Server address")
+	serverAddr := flag.String("server", "localhost:62371", "Server address")
 	flag.Parse()
 
 	// Connect to gRPC server
